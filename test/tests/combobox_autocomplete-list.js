@@ -118,6 +118,24 @@ ariaTest('"aria-activedescendant" on combobox element', exampleFile, 'combobox-a
     await assertAttributeValues(t, ex.textboxSelector, 'aria-activedescendant', null);
 });
 
+ariaTest('"id" attribute on combobox element', exampleFile, 'combobox-id', async (t) => {
+  const combobox = await t.context.session.findElement(By.css(ex.textboxSelector))
+  const id = await combobox.getAttribute('id');
+
+  console.log(id);
+  t.truthy(
+    id,
+    '"id" attribute should exist on combobox'
+  );
+
+  const label = await t.context.queryElements(t, `[for="${id}"]`);
+  t.is(
+    label.length,
+    1,
+    `There should be one element that labels the combobox with: [for="${id}"]`
+  );
+});
+
 ariaTest('role "listbox" on ul element', exampleFile, 'listbox-role', async (t) => {
     await assertAriaRoles(t, 'ex1', 'listbox', '1', 'ul');
 });

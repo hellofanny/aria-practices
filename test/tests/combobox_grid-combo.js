@@ -199,7 +199,7 @@ ariaTest('role "gridcell" exists within row element', exampleFile, 'gridcell-rol
 // Keys
 
 ariaTest('Test down key press with focus on combobox',
-  exampleFile, 'popup-key-down-arrow', async (t) => {
+  exampleFile, 'textbox-key-down-arrow', async (t) => {
 
 
     // Send ARROW_DOWN to the combobox
@@ -319,7 +319,7 @@ ariaTest('Test down key press with focus on list',
 
 
 ariaTest('Test up key press with focus on combobox',
-  exampleFile, 'popup-key-up-arrow', async (t) => {
+  exampleFile, 'textbox-key-up-arrow', async (t) => {
 
 
     // Send ARROW_UP to the combobox
